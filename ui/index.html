@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soil Loss & Erosion Risk Prediction System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <header class="app-header">
+    <div class="logo">🌱 RUSLE Agronomic Predictor</div>
+    <p class="tagline">Revised Universal Soil Loss Equation & Machine Learning Advisory</p>
+  </header>
+
+  <div class="main-grid">
+    <!-- Input Card -->
+    <div class="card form-card">
+      <h2>Regional Parameters</h2>
+      <p class="card-desc">Enter regional rainfall and location to estimate soil erosion</p>
+
+      <div class="form-group">
+        <label for="state">State</label>
+        <input type="text" id="state" placeholder="e.g. Maharashtra, Karnataka">
+      </div>
+
+      <div class="form-group">
+        <label for="district">District</label>
+        <input type="text" id="district" placeholder="e.g. Ratnagiri, Shimoga">
+      </div>
+
+      <div class="form-group">
+        <label for="rainfall">Monthly Rainfall (mm) <span class="required">*</span></label>
+        <input type="number" id="rainfall" placeholder="e.g. 350" required>
+      </div>
+
+      <details class="advanced-settings">
+        <summary>Advanced RUSLE Factors (Optional)</summary>
+        <div class="factor-grid">
+          <div>
+            <label>Soil Erodibility (K)</label>
+            <input type="number" id="kFactor" step="0.05" value="0.30">
+          </div>
+          <div>
+            <label>Slope Length (LS)</label>
+            <input type="number" id="lsFactor" step="0.1" value="2.0">
+          </div>
+          <div>
+            <label>Cover Management (C)</label>
+            <input type="number" id="cFactor" step="0.05" value="0.40">
+          </div>
+          <div>
+            <label>Conservation Practice (P)</label>
+            <input type="number" id="pFactor" step="0.05" value="0.80">
+          </div>
+        </div>
+      </details>
+
+      <button id="predictBtn" onclick="predictSoilLoss()">Calculate Soil Loss</button>
+
+      <!-- Prediction Result Box -->
+      <div class="result" id="resultBox">
+        <h3>Estimated Erosion Impact</h3>
+        <div class="metrics-row">
+          <div class="metric-item">
+            <span class="metric-title">RUSLE Soil Loss:</span>
+            <span class="metric-val" id="soilLoss">-</span>
+            <span class="metric-unit">t/ha/yr</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-title">Risk Level:</span>
+            <span class="risk-badge" id="riskLevel">-</span>
+          </div>
+        </div>
+
+        <div class="recommendation-box">
+          <strong>Agronomic Recommendation:</strong>
+          <p id="recommendation">-</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Top High-Risk Districts Panel -->
+    <div class="card table-card">
+      <div class="table-header">
+        <h2>Top High-Risk Districts</h2>
+        <span class="badge">Rainfall Analysis</span>
+      </div>
+      <p class="card-desc">Districts exhibiting highest calculated soil erosion from precipitation logs</p>
+
+      <div class="table-wrapper">
+        <table class="districts-table">
+          <thead>
+            <tr>
+              <th>State</th>
+              <th>District</th>
+              <th>Rainfall</th>
+              <th>Soil Loss</th>
+              <th>Risk</th>
+            </tr>
+          </thead>
+          <tbody id="districtsBody">
+            <tr>
+              <td colspan="5" class="empty-cell">Loading district records...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
