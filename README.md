@@ -1,4 +1,4 @@
-# 🌱 Soil Loss & Erosion Risk Prediction System
+# Soil Loss & Erosion Risk Prediction System
 
 > **Scientific Soil Loss Estimation & Agricultural Conservation Advisory using RUSLE Modeling & Machine Learning**
 
@@ -9,7 +9,7 @@
 
 ---
 
-## 📌 Overview
+## Overview
 
 Soil erosion severely threatens agricultural productivity and land sustainability. The **Soil Loss & Erosion Risk Prediction System** combines meteorological data with the internationally recognized **Revised Universal Soil Loss Equation (RUSLE)** and **Linear Regression** modeling to predict regional soil loss rates and evaluate soil vulnerability.
 
@@ -17,7 +17,7 @@ The companion interactive web interface enables farmers, agronomists, and enviro
 
 ---
 
-## 🔬 The Science: RUSLE Equation
+## The Science: RUSLE Equation
 
 The system models soil erosion using the Revised Universal Soil Loss Equation:
 
@@ -33,18 +33,16 @@ Where:
 
 ---
 
-## 📊 Erosion Risk Classification
+## Erosion Risk Classification
 
 | Projected Soil Loss (t/ha) | Risk Level | Prescribed Agricultural Recommendation |
 | :--- | :--- | :--- |
-| **$< 20$** | 🟢 **Low** | Maintain standard sustainable farming practices. |
-| **$20 - 50$** | 🟡 **Moderate** | Increase vegetation cover and utilize cover cropping. |
-| **$50 - 100$** | 🟠 **High** | Implement contour farming, strip cropping, and mulching. |
-| **$\ge 100$** | 🔴 **Severe** | Immediate structural soil conservation and terracing required. |
+| **$< 20$** | **Low** | Maintain standard sustainable farming practices. |
+| **$20 - 50$** | **Moderate** | Increase vegetation cover and utilize cover cropping. |
+| **$50 - 100$** | **High** | Implement contour farming, strip cropping, and mulching. |
+| **$\ge 100$** | **Severe** | Immediate structural soil conservation and terracing required. | ---
 
----
-
-## 🏗️ Project Structure
+## Project Structure
 
 ```
 Intelligent Crop Selection Using Machine Learning/
@@ -60,7 +58,7 @@ Intelligent Crop Selection Using Machine Learning/
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### 1. Prerequisites
 - Python 3.9+ installed
@@ -92,7 +90,7 @@ Open `ui/index.html` directly in any web browser:
 
 ---
 
-## 📈 Sample Results
+## Sample Results
 
 ```
 SoilLoss = 0.1245 × Rainfall + 3.4218
@@ -106,6 +104,6 @@ Top 10 High Risk Districts:
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the [MIT License](LICENSE).
